@@ -122,38 +122,6 @@ document.querySelectorAll('.reveal').forEach(el => {
     observer.observe(el);
 });
 
-// 3. Number Counter Animation
-const counters = document.querySelectorAll('.count');
-const speed = 200; // The lower the slower
-
-const counterObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            const updateCount = () => {
-                const target = +entry.target.getAttribute('data-target');
-                const count = +entry.target.innerText.replace(/,/g, ''); // remove commas if any
-                
-                // Lower inc to slow and higher to slow
-                const inc = target / speed;
-
-                if (count < target) {
-                    entry.target.innerText = Math.ceil(count + inc).toLocaleString();
-                    setTimeout(updateCount, 20);
-                } else {
-                    entry.target.innerText = target.toLocaleString() + "+";
-                    observer.unobserve(entry.target); // Stop observing once target is reached
-                }
-            };
-
-            updateCount();
-        }
-    });
-}, { threshold: 0.7 }); // Trigger when 70% of counter is visible
-
-counters.forEach(counter => {
-    counterObserver.observe(counter);
-});
-
 /* ---------------------------------------------------------------------- */
 // 4. Donation Form & Button Logic (Handles index/donate page elements)
 /* ---------------------------------------------------------------------- */
@@ -311,4 +279,5 @@ function updateAuthLink() {
 
 // Call the new function on page load
 document.addEventListener('DOMContentLoaded', updateAuthLink);
+
 
