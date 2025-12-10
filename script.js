@@ -122,6 +122,44 @@ document.querySelectorAll('.reveal').forEach(el => {
     observer.observe(el);
 });
 
+// 3. Number Counter Animation (Fixed)
+const counters = document.querySelectorAll('.count');
+const speed = 200; 
+
+const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            const updateCount = () => {
+                // Get target number
+                const target = +entry.target.getAttribute('data-target');
+                
+                // Get current number (Strip out commas AND the + sign to avoid NaN)
+                const currentText = entry.target.innerText.replace(/[^0-9]/g, '');
+                const count = +currentText;
+
+                // Determine increment
+                const inc = target / speed;
+
+                if (count < target) {
+                    // Add increment and format with commas
+                    entry.target.innerText = Math.ceil(count + inc).toLocaleString();
+                    setTimeout(updateCount, 20);
+                } else {
+                    // Final finish: Ensure it matches target exactly and add the + sign
+                    entry.target.innerText = target.toLocaleString() + "+";
+                    observer.unobserve(entry.target); 
+                }
+            };
+
+            updateCount();
+        }
+    });
+}, { threshold: 0.7 });
+
+counters.forEach(counter => {
+    counterObserver.observe(counter);
+});
+
 /* ---------------------------------------------------------------------- */
 // 4. Donation Form & Button Logic (Handles index/donate page elements)
 /* ---------------------------------------------------------------------- */
@@ -279,5 +317,6 @@ function updateAuthLink() {
 
 // Call the new function on page load
 document.addEventListener('DOMContentLoaded', updateAuthLink);
+
 
 
