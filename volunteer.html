@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer | EduTribes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        .volunteer-hero {
+            height: 60vh;
+             background: linear-gradient(to bottom, 
+        /* 1. TOP: Light Sand (0% to 15%) - Makes Menu Visible */
+        rgba(255, 250, 228, 0.95) 0%, 
+        rgba(224, 220, 205, 0.8) 10%, 
+        
+        /* 2. TRANSITION: Fades into dark quickly (15% to 30%) */
+        rgba(27, 67, 50, 0.4) 40%,
+        
+        /* 3. CENTER/BOTTOM: Dark Green (30% to 100%) - Makes White Text Visible */
+        rgba(27, 67, 50, 0.7) 60%
+    ),  url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .volunteer-hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--accent); 
+        }
+
+        .project-grid { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .program-card {
+            text-align: center;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background-color: var(--white);
+            border-top: 4px solid var(--accent);
+        }
+
+        .program-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact form input, .contact form textarea {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        
+        /* ---------------------------------------------------------------------- */
+        /* NEW MOBILE FONT FIXES (ADDED) */
+        /* ---------------------------------------------------------------------- */
+        @media (max-width: 768px) {
+            .volunteer-hero h1 {
+                font-size: 2.2rem; /* Reduced size for main heading */
+            }
+            .volunteer-hero p {
+                font-size: 1rem; /* Reduced size for lead paragraph */
+            }
+            .section-title {
+                font-size: 1.8rem; /* Reduced size for h2 titles */
+            }
+            .text-xl {
+                font-size: 1rem; /* Reduced size for large text utility class */
+            }
+            .text-lg {
+                font-size: 0.95rem; /* Reduced size for large text utility class */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-new" id="navbar">
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+            
+            <!-- 1. Logo -->
+            <div class="logo">EduTribes</div>
+            
+            <!-- 2. Navigation -->
+            <nav class="nav-links" id="navLinks"> 
+                <i class="fas fa-times close-menu" id="closeMenu"></i> 
+                
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="projects.html">Our Projects</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+                <a href="usersprofile.html">My Dashboard</a>
+                <!-- 3. Donate Button -->
+                <a href="donate.html" class="btn btn-donate">Donate Now</a>
+                
+                <!-- 4. User Profile Icon -->
+                <a href="#" onclick="logoutUser()" style="color: #666; font-size: 0.9rem; font-weight: 600; margin-left: 15px;">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Icon -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="volunteer-hero">
+        <div class="container reveal">
+            <h1>BECOME A FORCE FOR CHANGE</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Join the EduTribes volunteer network and directly contribute your expertise to empowering indigenous communities through education.</p>
+            <a href="#join" class="btn btn-primary">
+                <i class="fas fa-arrow-down mr-2"></i> Explore Opportunities
+            </a>
+            
+        </div>
+    </section>
+
+    <section class="programs">
+        <div class="container reveal">
+            <h2 class="section-title">Areas of Impact</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 60px; color: var(--text-light);">We offer flexible, structured programs for both remote and on-site involvement.</p>
+            
+            <div class="project-grid">
+                <div class="program-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Academic Mentorship</h3>
+                    <p>Provide direct tutoring in core subjects or conduct specialized workshops (e.g., coding, art, finance).</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Resource Mobilization</h3>
+                    <p>Assist with grant research, fundraising campaigns, and donation management to secure project resources.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>Operational Support (Remote)</h3>
+                    <p>Contribute remotely via data management, digital media creation, or website maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="join" style="background-color: var(--bg-color);">
+        <div class="container reveal text-center">
+            <h2 class="section-title" style="color: var(--primary);">Start Your Journey with Us</h2>
+            <p class="text-lg mb-8" style="color: var(--text-dark);">Fill out our brief application to let us know your skills and availability.</p>
+            
+            <form action="#" method="POST" id="volunteer-form" class="max-w-xl mx-auto flex flex-col gap-4">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea placeholder="Tell us about your skills and preferred area of impact (e.g., teaching high school math, social media, event planning)" rows="4"></textarea>
+                <button type="submit" class="btn btn-primary w-full mt-4">
+                    <i class="fas fa-paper-plane mr-2"></i> Submit Application
+                </button>
+                 <div style="height: 100px; width: 100%; clear: both;"></div>
+
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo" style="color:white;">EduTribes</h4>
+                    <p>Empowering Tarlac's Indigenous Youth through education and hope.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Tarlac City, Philippines</li>
+                        <li>edutribes.ph@gmail.com</li>
+                        <li>+63 912 345 6789</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter email">
+                        <button type="submit"><i class="fas fa-paper-plane" style="margin-bottom: 100px;"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduTribes Foundation. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+     <!-- Tab Logic & Logout Script -->
+    <script>
+        // 1. Tab Switching Logic
+        function openTab(tabName) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove active class from all buttons
+            var tabs = document.getElementsByClassName("pill-tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            // Show target content
+            document.getElementById(tabName).style.display = "grid";
+            // Add active class to clicked button
+            event.currentTarget.classList.add("active");
+        }
+
+        // 2. Logout Logic
+        function logoutUser() {
+            // Confirm logout
+            if(confirm("Are you sure you want to log out?")) {
+                // Redirect to Login Page
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

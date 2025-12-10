@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | EduTribes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="split-bg">
+
+    <!-- Header -->
+    <header class="solid-header">
+        <div class="logo">EduTribes</div>
+        <nav class="nav-links">
+            <a href="login.html" class="active-link">Log In</a>
+        </nav>
+    </header>
+
+    <!-- Split Screen Container -->
+    <div class="split-container">
+        
+        <!-- LEFT SIDE: Image & Quote -->
+        <div class="split-image-side">
+            <div class="quote-overlay">
+                <h1>“Education for every Tribe,<br>Hope for every child”</h1>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: Form -->
+        <div class="split-form-side">
+            <div class="form-content">
+                <h3 class="welcome-text">Welcome back! Access your account and join us in creating educational opportunities for tribal youth.</h3>
+                
+                <form id="loginForm">
+                    <div class="clean-form-group">
+                        <label>Email or Phone Number</label>
+                        <!-- Updated Placeholder -->
+                        <input type="text" id="loginInput" class="clean-input" placeholder="Enter your email or phone number">
+                        <!-- Error Message Container -->
+                        <small class="error-text" id="loginError"></small>
+                    </div>
+
+                    <div class="clean-form-group">
+                        <label>Password</label>
+                        <input type="password" id="passwordInput" class="clean-input" placeholder="Enter password">
+                        <small class="error-text" id="passError"></small>
+                    </div>
+
+                    <!-- Button triggers validateLogin() -->
+                    <button type="button" onclick="validateLogin()" class="btn-login-clean">
+                        Log In
+                    </button>
+
+                    <a href="#" class="forgot-pass" style="text-align: center;">Forgot Password?</a>
+                    
+                    <div class="separator">or</div>
+
+                    <a href="signup.html" class="btn-create-clean">
+                        Create an Account
+                    </a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT FOR VALIDATION -->
+    <script>
+        function validateLogin() {
+            const inputField = document.getElementById('loginInput');
+            const passwordField = document.getElementById('passwordInput');
+            const errorText = document.getElementById('loginError');
+            const passError = document.getElementById('passError');
+            
+            const value = inputField.value.trim();
+            const password = passwordField.value.trim();
+
+            // Reset errors
+            inputField.classList.remove('input-error');
+            passwordField.classList.remove('input-error');
+            errorText.style.display = 'none';
+            passError.style.display = 'none';
+
+            let isValid = true;
+
+            // 1. Check Empty Fields
+            if (value === "") {
+                errorText.innerText = "Please enter your email or phone number.";
+                errorText.style.display = "block";
+                inputField.classList.add('input-error');
+                isValid = false;
+            }
+
+            if (password === "") {
+                passError.innerText = "Please enter your password.";
+                passError.style.display = "block";
+                passwordField.classList.add('input-error');
+                isValid = false;
+            }
+
+            if (!isValid) return; // Stop if empty
+
+            // 2. Validate Email OR Phone
+            const isEmail = validateEmail(value);
+            const isPhone = validatePhone(value);
+
+            if (isEmail || isPhone) {
+                // Success! Redirect
+                window.location.href = 'usersprofile.html';
+            } else {
+                // Invalid Format
+                errorText.innerText = "Invalid format. Use name@example.com or 09XX XXX XXXX.";
+                errorText.style.display = "block";
+                inputField.classList.add('input-error');
+            }
+        }
+
+        // Regex for Email
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Logic for PH Phone Number
+        function validatePhone(phone) {
+            // Remove spaces, dashes, parentheses to check the digits
+            const cleanPhone = phone.replace(/[\s-]/g, '');
+
+            // Check Pattern 1: Starts with 09 and has 11 digits total (e.g. 09171234567)
+            const localPattern = /^09\d{9}$/;
+            
+            // Check Pattern 2: Starts with +639 and has 13 chars total (e.g. +639171234567)
+            const intlPattern = /^\+639\d{9}$/;
+
+            return localPattern.test(cleanPhone) || intlPattern.test(cleanPhone);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects | EduTribes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="header-new" id="navbar">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+        <div class="logo">EduTribes</div>
+        <nav class="nav-links" id="navLinks"> 
+            <i class="fas fa-times close-menu" id="closeMenu"></i> 
+            
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <!-- Active Class on OUR PROJECTS -->
+            <a href="projects.html" class="active">Our Projects</a>
+            <a href="events.html">Events</a>
+            <a href="contact.html">Contact</a>
+            <a href="usersprofile.html">My Dashboard</a>
+            <a href="donate.html" class="btn btn-donate">Donate Now</a>
+            <a href="#" onclick="logoutUser()" style="color: #666; font-size: 0.9rem; font-weight: 600; margin-left: 15px;">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+        </nav>
+        <div class="hamburger-menu" id="hamburgerMenu"><i class="fas fa-bars"></i></div>
+        
+    </div>
+</header>
+
+    <section id="core-pillars" style="padding-top: 120px;">
+        <div class="container">
+            <h2 class="section-title">Our Core Pillars</h2>
+            
+            <p class="pillar-intro">Our work is centered on three pillars that directly address the core challenges faced by indigenous Aeta communities in Tarlac, ensuring sustainable and culturally relevant development.</p>
+
+            <div class="pillar-grid">
+                <div class="pillar-card reveal">
+                    <i class="fas fa-graduation-cap pillar-icon"></i>
+                    <h4>Quality Education</h4>
+                    <p>We provide scholarships, school supplies, and establish learning hubs to ensure every child has access to formal education and necessary resources.</p>
+                    <a href="projects.html#causes" class="btn-text">View Related Projects</a>
+                </div>
+
+                <div class="pillar-card reveal">
+                    <i class="fas fa-laptop-code pillar-icon"></i>
+                    <h4>Digital Literacy</h4>
+                    <p>Bridging the digital divide by equipping youth with essential computer skills and internet access, preparing them for the modern economy.</p>
+                    <a href="projects.html#causes" class="btn-text">View Related Projects</a>
+                </div>
+
+                <div class="pillar-card reveal">
+                    <i class="fas fa-heart pillar-icon"></i>
+                    <h4>Community Support</h4>
+                    <p>Focusing on health, nutrition, and cultural preservation initiatives that empower the community while respecting their unique heritage.</p>
+                    <a href="projects.html#causes" class="btn-text">View Related Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="causes">
+        <h2>Latest Causes</h2>
+        <div class="cause-grid">
+
+            <div class="cause-card">
+                <div class="cause-image">
+                    <img src="supplies.jpg" alt="Cause 1">
+                    <a href="donate.html" class="btn-overlay">Donate Now</a>
+                </div>
+                <h3>School Supplies for Kids</h3>
+                <p>Help provide notebooks, pencils, and bags for 100 children in need.</p>
+                <div class="progress-container" data-progress="70">
+                    <div class="progress-bar"></div>
+                </div>
+                <p>Raised: ₱68,700 / Goal: ₱100,000</p>
+            </div>
+
+            <div class="cause-card">
+                <div class="cause-image">
+                    <img src="Educ3.jpg" alt="Cause 2">
+                    <a href="donate.html" class="btn-overlay">Donate Now</a>
+                </div>
+                <h3>Scholarship Fund</h3>
+                <p>Support scholarships for indigenous students to continue education.</p>
+                <div class="progress-container" data-progress="45">
+                    <div class="progress-bar"></div>
+                </div>
+                <p>Raised: ₱196,560 / Goal: ₱300,000</p>
+            </div>
+
+            <div class="cause-card">
+                <div class="cause-image">
+                    <img src="lib.jpg" alt="Cause 3">
+                    <a href="donate.html" class="btn-overlay">Donate Now</a>
+                </div>
+                <h3>Community Library</h3>
+                <p>Help us build a small library with books and computers for children.</p>
+                <div class="progress-container" data-progress="30">
+                    <div class="progress-bar"></div>
+                </div>
+                <p>Raised: ₱234,753 / Goal: ₱500,000</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo" style="color:white;">EduTribes</h4>
+                    <p>Empowering Tarlac's Indigenous Youth through education and hope.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Tarlac City, Philippines</li>
+                        <li>edutribes.ph@gmail.com</li>
+                        <li>+63 912 345 6789</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduTribes Foundation. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+ <!-- Tab Logic & Logout Script -->
+    <script>
+        // 1. Tab Switching Logic
+        function openTab(tabName) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove active class from all buttons
+            var tabs = document.getElementsByClassName("pill-tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            // Show target content
+            document.getElementById(tabName).style.display = "grid";
+            // Add active class to clicked button
+            event.currentTarget.classList.add("active");
+        }
+
+        // 2. Logout Logic
+        function logoutUser() {
+            // Confirm logout
+            if(confirm("Are you sure you want to log out?")) {
+                // Redirect to Login Page
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & News | EduTribes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="header-new" id="navbar">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+        <div class="logo">EduTribes</div>
+        <nav class="nav-links" id="navLinks"> 
+            <i class="fas fa-times close-menu" id="closeMenu"></i> 
+            
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="projects.html">Our Projects</a>
+            <!-- Active Class on EVENTS -->
+            <a href="events.html" class="active">Events</a>
+            <a href="contact.html">Contact</a>
+            <a href="usersprofile.html">My Dashboard</a>
+            <a href="donate.html" class="btn btn-donate">Donate Now</a>
+            <a href="#" onclick="logoutUser()" style="color: #666; font-size: 0.9rem; font-weight: 600; margin-left: 15px;">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+        </nav>
+        <div class="hamburger-menu" id="hamburgerMenu"><i class="fas fa-bars"></i></div>
+        
+    </div>
+</header>
+
+    <section class="calendar-grid-section">
+        <div class="container">
+            <h2 class="section-title">Event Calendar</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 60px; color: var(--text-light);">Stay up-to-date with our latest activities and community outreach efforts.</p>
+
+            <div class="calendar-grid">
+                
+                <a href="#" class="calendar-item reveal">
+                    <div class="item-image" style="background-image: url('https://i.pinimg.com/1200x/30/24/a4/3024a41d2f92b212df6ca7c8e7aff041.jpg');"></div>
+                    <div class="date-block">
+                        <div class="date-day">15</div>
+                        <div class="date-month">DEC 2024</div>
+                    </div>
+                    <div class="item-location">Sitio Target, Tarlac</div>
+                    <div class="item-title">Backpack Distribution</div>
+                </a>
+
+                <a href="#" class="calendar-item reveal">
+                    <div class="item-image" style="background-image: url('jan.jpg');"></div>
+                    <div class="date-block">
+                        <div class="date-day">10</div>
+                        <div class="date-month">JAN 2025</div>
+                    </div>
+                    <div class="item-location">San Jose Learning Center</div>
+                    <div class="item-title">Outreach Program</div>
+                </a>
+
+                <a href="#" class="calendar-item reveal">
+                    <div class="item-image" style="background-image: url('https://fortconvent.org/wp-content/uploads/2022/07/Parents-Meeting-Std.4-2.jpeg');"></div>
+                    <div class="date-block">
+                        <div class="date-day">20</div>
+                        <div class="date-month">FEB 2025</div>
+                    </div>
+                    <div class="item-location">Virtual Event</div>
+                    <div class="item-title">Parent Education Seminar</div>
+                </a>
+                
+                <a href="#" class="calendar-item reveal">
+                    <div class="item-image" style="background-image: url('https://i.pinimg.com/1200x/eb/e8/ce/ebe8ce2a250588dcfe19f8ca7f7e081d.jpg');"></div>
+                    <div class="date-block">
+                        <div class="date-day">05</div>
+                        <div class="date-month">MARCH 2025</div>
+                    </div>
+                    <div class="item-location">Tarlac City Hall</div>
+                    <div class="item-title">Volunteer Recruitment Drive</div>
+                </a>
+                
+                <a href="#" class="calendar-item reveal">
+                    <div class="item-image" style="background-image: url('june.jpg');"></div>
+                    <div class="date-block">
+                        <div class="date-day">12</div>
+                        <div class="date-month">JUNE 2025</div>
+                    </div>
+                    <div class="item-location">Barangay Hall, Paniqui</div>
+                    <div class="item-title">Community Feeding Program</div>
+                </a>
+                
+                <a href="#" class="calendar-item reveal">
+                    <div class="item-image" style="background-image: url('aug.jpg');"></div>
+                    <div class="date-block">
+                        <div class="date-day">28</div>
+                        <div class="date-month">AUGUST 2025</div>
+                    </div>
+                    <div class="item-location">Sitio Pader, Bamban</div>
+                    <div class="item-title">New Library Groundbreaking</div>
+                </a>
+                
+                <a href="#" class="calendar-item reveal">
+                    <div class="item-image" style="background-image: url('https://i.pinimg.com/1200x/9e/4e/7a/9e4e7a1488f4e61788c4ce38832a8281.jpg');"></div>
+                    <div class="date-block">
+                        <div class="date-day">10</div>
+                        <div class="date-month">OCT 2025</div>
+                    </div>
+                    <div class="item-location">Virtual Meeting</div>
+                    <div class="item-title">Donor Appreciation Night</div>
+                </a>
+
+                <a href="#" class="calendar-item reveal">
+                    <div class="item-image" style="background-image: url('dec.webp');"></div>
+                    <div class="date-block">
+                        <div class="date-day">25</div>
+                        <div class="date-month">DEC 2025</div>
+                    </div>
+                    <div class="item-location">Tarlac Provincial Capitol</div>
+                    <div class="item-title">Educational Summit</div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="volunteer-cta" style="text-align: center; padding: 40px 20px; background-color: var(--bg-color);">
+    <div class="container">
+        <a href="volunteer.html" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
+            <i class="fas fa-hand-holding-heart" style="margin-right: 10px;"></i> Join Us Now!
+        </a>
+    </div>
+</section>
+
+    <section class="donation-cta">
+        <div class="container reveal">
+            <h2>Support Our Mission Today!</h2>
+            <a href="donate.html" class="btn btn-primary" style="background: white; color: var(--primary);">Give Now</a>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo" style="color:white;">EduTribes</h4>
+                    <p>Empowering Tarlac's Indigenous Youth through education and hope.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Tarlac City, Philippines</li>
+                        <li>edutribes.ph@gmail.com</li>
+                        <li>+63 912 345 6789</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduTribes Foundation. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+ <!-- Tab Logic & Logout Script -->
+    <script>
+        // 1. Tab Switching Logic
+        function openTab(tabName) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove active class from all buttons
+            var tabs = document.getElementsByClassName("pill-tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            // Show target content
+            document.getElementById(tabName).style.display = "grid";
+            // Add active class to clicked button
+            event.currentTarget.classList.add("active");
+        }
+
+        // 2. Logout Logic
+        function logoutUser() {
+            // Confirm logout
+            if(confirm("Are you sure you want to log out?")) {
+                // Redirect to Login Page
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

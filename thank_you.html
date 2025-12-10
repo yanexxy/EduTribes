@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! | EduTribes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        .thank-you-box {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            border-top: 5px solid var(--accent);
+        }
+        .thank-you-box i {
+            color: var(--primary);
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        .thank-you-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .thank-you-box p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            70% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-new" id="navbar">
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+            
+            <!-- 1. Logo -->
+            <div class="logo">EduTribes</div>
+            
+            <!-- 2. Navigation -->
+            <nav class="nav-links" id="navLinks"> 
+                <i class="fas fa-times close-menu" id="closeMenu"></i> 
+                
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="projects.html">Our Projects</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+                <a href="usersprofile.html">My Dashboard</a>
+
+                
+                <!-- 3. Donate Button -->
+                <a href="donate.html" class="btn btn-donate">Donate Now</a>
+                
+                <a href="#" onclick="logoutUser()" style="color: #666; font-size: 0.9rem; font-weight: 600; margin-left: 15px;">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            
+
+            <!-- Mobile Menu Icon -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="thank-you" style="min-height: 80vh; display: flex; align-items: center; padding: 100px 0;">
+        <div class="container">
+            <div class="thank-you-box reveal">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h2 class="section-title" style="color: var(--primary);">Thank You for Your Generosity!</h2>
+                <p>Your simulated donation makes a real difference in the lives of the Aeta youth in Tarlac. You've just invested in a brighter future.</p>
+                <a href="index.html" class="btn btn-primary btn-small" style="margin-right: 15px;">
+                    <i class="fas fa-home"></i> Back to Homepage
+                </a>
+                <a href="projects.html" class="btn btn-outline btn-small">
+                    <i class="fas fa-search"></i> See Our Impact
+                </a>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 30px;">A confirmation email (simulated) has been sent to your provided address.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo" style="color:white;">EduTribes</h4>
+                    <p>Empowering Tarlac's Indigenous Youth through education and hope.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Tarlac City, Philippines</li>
+                        <li>edutribes.ph@gmail.com</li>
+                        <li>+63 912 345 6789</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduTribes Foundation. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+     <!-- Tab Logic & Logout Script -->
+    <script>
+        // 1. Tab Switching Logic
+        function openTab(tabName) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove active class from all buttons
+            var tabs = document.getElementsByClassName("pill-tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            // Show target content
+            document.getElementById(tabName).style.display = "grid";
+            // Add active class to clicked button
+            event.currentTarget.classList.add("active");
+        }
+
+        // 2. Logout Logic
+        function logoutUser() {
+            // Confirm logout
+            if(confirm("Are you sure you want to log out?")) {
+                // Redirect to Login Page
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

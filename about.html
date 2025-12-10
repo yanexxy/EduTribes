@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | EduTribes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="header-new" id="navbar">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+        <div class="logo">EduTribes</div>
+        <nav class="nav-links" id="navLinks"> 
+            <i class="fas fa-times close-menu" id="closeMenu"></i> 
+            
+            <a href="index.html">Home</a>
+            <!-- Active Class on ABOUT US -->
+            <a href="about.html" class="active">About Us</a>
+            <a href="projects.html">Our Projects</a>
+            <a href="events.html">Events</a>
+            <a href="contact.html">Contact</a>
+            <a href="usersprofile.html">My Dashboard</a>
+            <a href="donate.html" class="btn btn-donate">Donate Now</a>
+            <a href="#" onclick="logoutUser()" style="color: #666; font-size: 0.9rem; font-weight: 600; margin-left: 15px;">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+        </nav>
+        <div class="hamburger-menu" id="hamburgerMenu"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+
+    <section class="about" id="about" style="padding-top: 150px;">
+        <div class="container">
+            <h2 class="section-title">Who We Are and Our Mission</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 60px; color: var(--text-light);">Learn more about the heart of EduTribes, our history, and the values that drive our commitment to indigenous education.</p>
+            
+            <div class="about-grid" style="margin-top: 50px;">
+                <div class="about-img reveal">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Aeta children learning">
+                </div>
+                <div class="about-text reveal">
+                    <h3>Bridging the Gap in Indigenous Education</h3>
+                    <p>Founded in 2024, EduTribes is dedicated to the Aeta communities in Tarlac. We believe that geography and heritage should never be a barrier to quality education.</p>
+                    <p>Our mission is to provide holistic support—from backpacks to building classrooms—ensuring that every child has the tools to build their own future. We collaborate closely with local community leaders to ensure our projects are sustainable and culturally appropriate.</p>
+                    
+                    <h4 style="margin-top: 30px; color: var(--primary);">Core Values</h4>
+                    <div class="values-list">
+                        <div class="value-item"><i class="fas fa-check-circle"></i> Integrity</div>
+                        <div class="value-item"><i class="fas fa-check-circle"></i> Compassion</div>
+                        <div class="value-item"><i class="fas fa-check-circle"></i> Excellence</div>
+                    </div>
+                    
+                    <a href="volunteer.html" class="btn btn-primary" style="margin-top: 30px; display: inline-block;">
+                        <i class="fas fa-handshake"></i> View More
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="donation-cta">
+        <div class="container reveal">
+            <h2>Support Our Mission Today!</h2>
+            <a href="donate.html" class="btn btn-primary" style="background: white; color: var(--primary);">Give Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo" style="color:white;">EduTribes</h4>
+                    <p>Empowering Tarlac's Indigenous Youth through education and hope.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Tarlac City, Philippines</li>
+                        <li>edutribes.ph@gmail.com</li>
+                        <li>+63 912 345 6789</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduTribes Foundation. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script src="script.js"></script>
+
+</body>
+</html>

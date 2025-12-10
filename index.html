@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTribes | Education for Every Tribe</title>
+    
+    <!-- FONTS & ICONS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- LINK TO EXTERNAL CSS -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="header-new" id="navbar">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+        <div class="logo">EduTribes</div>
+        <nav class="nav-links" id="navLinks"> 
+            <i class="fas fa-times close-menu" id="closeMenu"></i> 
+            
+            <!-- Active Class on HOME -->
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="projects.html">Our Projects</a>
+            <a href="events.html">Events</a>
+            <a href="contact.html">Contact</a>
+            <a href="usersprofile.html">My Dashboard</a>
+            <a href="donate.html" class="btn btn-donate">Donate Now</a>
+            <a href="#" onclick="logoutUser()" style="color: #666; font-size: 0.9rem; font-weight: 600; margin-left: 15px;">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+        </nav>
+        <div class="hamburger-menu" id="hamburgerMenu"><i class="fas fa-bars"></i></div>
+        
+    </div>
+</header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 style="color:white">Education for Every Tribe,<br>Hope for Every Child.</h1>
+            <p>We are empowering the indigenous Aeta communities of Tarlac through scholarships, school supplies, and learning centers.</p>
+            <div class="hero-btns">
+                <a href="donate.html" class="btn btn-primary">Start Giving</a>
+                <a href="about.html" class="btn btn-outline">Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT COUNTER -->
+    <div class="container">
+        <div class="impact-counter">
+            <div class="counter-item">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h2 class="count" data-target="125000">0</h2>
+                <p>Pesos Raised</p>
+            </div>
+            <div class="counter-item">
+                <i class="fas fa-graduation-cap"></i>
+                <h2 class="count" data-target="350">0</h2>
+                <p>Scholars Supported</p>
+            </div>
+            <div class="counter-item">
+                <i class="fas fa-users"></i>
+                <h2 class="count" data-target="120">0</h2>
+                <p>Active Volunteers</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CALL TO ACTION / DONATE (SIMPLIFIED) -->
+    <section class="donation-cta">
+        <div class="container reveal">
+            <h2>Ready to Make a Difference?</h2>
+            <p>Your contribution, no matter how small, directly impacts the life of a student in Tarlac.</p>
+            <a href="donate.html" class="btn btn-primary" style="background: white; color: var(--primary);">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo" style="color:white;">EduTribes</h4>
+                    <p>Empowering Tarlac's Indigenous Youth through education and hope.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Tarlac City, Philippines</li>
+                        <li>edutribes.ph@gmail.com</li>
+                        <li>+63 912 345 6789</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduTribes Foundation. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+     <!-- Tab Logic & Logout Script -->
+    <script>
+        // 1. Tab Switching Logic
+        function openTab(tabName) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove active class from all buttons
+            var tabs = document.getElementsByClassName("pill-tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            // Show target content
+            document.getElementById(tabName).style.display = "grid";
+            // Add active class to clicked button
+            event.currentTarget.classList.add("active");
+        }
+
+        // 2. Logout Logic
+        function logoutUser() {
+            // Confirm logout
+            if(confirm("Are you sure you want to log out?")) {
+                // Redirect to Login Page
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+    <!-- LINK TO EXTERNAL JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>

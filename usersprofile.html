@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | EduTribes</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700;800&family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="profile-body-v2">
+
+    <header class="header-new" id="navbar">
+        <div class="container">
+            <!-- Logo on the Left -->
+            <div class="logo">EduTribes</div>
+            
+            <!-- Navigation pushed to the Right via CSS -->
+            <nav class="nav-links" id="navLinks"> 
+                <i class="fas fa-times close-menu" id="closeMenu"></i> 
+                
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="projects.html">Our Projects</a>
+                <a href="events.html">Events</a>
+                <a href="contact.html">Contact</a>
+                
+                <!-- Dashboard Specific Links -->
+                <a href="usersprofile.html" class="active">My Dashboard</a>
+                
+                <a href="donate.html" class="btn btn-donate">Donate Now</a>
+                
+                <a href="index.html" class="logout-link">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </nav>
+
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            
+
+        </div>
+    </header>
+
+    <!-- Logout Button -->
+                
+
+    <!-- DEEP GREEN PROFILE HEADER -->
+    <section class="profile-header-v2">
+        <div class="container profile-header-content">
+            
+            <!-- 1. Avatar on the Left -->
+            <img src="nadine.jpg" alt="Profile" class="profile-avatar-v2">
+            
+            <!-- 2. Details on the Right -->
+            <div class="profile-details-wrapper">
+                
+                <!-- Name and Date -->
+                <h1 class="profile-name-v2">Nadine Lustre</h1>
+                <p class="member-since">Member since January 2025</p>
+                
+                <!-- Stats Row (Aligned Left) -->
+                <div class="stats-row-v2">
+                    <div class="stat-box">
+                        <h3>₱120,500</h3>
+                        <span>TOTAL DONATED</span>
+                    </div>
+                    <div class="stat-box">
+                        <h3>21</h3>
+                        <span>DONATIONS MADE</span>
+                    </div>
+                    <div class="stat-box">
+                        <h3>#3</h3>
+                        <span>TOP DONOR RANK</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DASHBOARD CONTENT -->
+    <section class="dashboard-section">
+        <div class="container">
+            
+            <!-- Pill Tabs -->
+            <div class="tab-container">
+                <button class="pill-tab active" onclick="openTab('overview')">Overview</button>
+                <button class="pill-tab" onclick="openTab('impact')">My Impact</button>
+                <button class="pill-tab" onclick="openTab('settings')">Settings</button>
+            </div>
+
+            <!-- TAB 1: OVERVIEW -->
+            <div id="overview" class="dashboard-grid-v2 tab-content">
+                
+                <!-- Left: Leaderboard -->
+                <div class="card-v2">
+                    <div class="card-header-v2">
+                        <i class="fas fa-trophy" style="color: #FFB700;"></i> Top Donor Leaderboard
+                    </div>
+                    
+                    <div class="leaderboard-v2">
+                        <!-- Rank 1 -->
+                        <div class="lb-row">
+                            <div class="lb-rank gold">1</div>
+                            <img src="kathryn.jpg" class="lb-img">
+                            <div class="lb-info">
+                                <strong>Kathryn Bernardo</strong>
+                                <span>45 Donations</span>
+                            </div>
+                            <div class="lb-total">₱300,400</div>
+                        </div>
+
+                        <!-- Rank 2 -->
+                        <div class="lb-row">
+                            <div class="lb-rank silver">2</div>
+                            <img src="anne.jpg" class="lb-img">
+                            <div class="lb-info">
+                                <strong>Anne Curtis</strong>
+                                <span>30 Donations</span>
+                            </div>
+                            <div class="lb-total">₱146,800</div>
+                        </div>
+
+                        <!-- Rank 3 (YOU) - Highlighted -->
+                        <div class="lb-row active-user">
+                            <div class="lb-rank bronze">3</div>
+                            <img src="nadine.jpg" class="lb-img">
+                            <div class="lb-info">
+                                <strong>Nadine Lustre (You)</strong>
+                                <span>21 Donations</span>
+                            </div>
+                            <div class="lb-total">₱120,500</div>
+                        </div>
+
+                        <!-- Rank 4 -->
+                        <div class="lb-row">
+                            <div class="lb-rank">4</div>
+                            <img src="gabbi.jpg" class="lb-img">
+                            <div class="lb-info">
+                                <strong>Gabbi Garcia</strong>
+                                <span>15 Donations</span>
+                            </div>
+                            <div class="lb-total">₱83,700</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Stats Column -->
+                <div class="right-col-stack">
+                    <!-- Your Rank Card -->
+                    <div class="card-v2">
+                        <div class="card-header-v2">
+                            <i class="fas fa-medal" style="color: #FFB700;"></i> Your Rank
+                        </div>
+                        <div class="big-rank-number">#3</div>
+                        <p class="rank-sub">out of 1,247 donors</p>
+                        <hr class="card-divider">
+                        <p class="rank-stat"><i class="fas fa-chart-line"></i> Top 99.8% of all donors</p>
+                    </div>
+
+                    <!-- Milestone Card -->
+                    <div class="card-v2">
+                        <div class="card-header-v2">Milestone Status</div>
+                        
+                        <div class="milestone-row">
+                            <span>Current Level</span>
+                            <span class="badge badge-gold">Gold</span>
+                        </div>
+                        <div class="milestone-row">
+                            <span>Next Level</span>
+                            <span class="badge badge-gray">Platinum</span>
+                        </div>
+                        <div class="progress-info" style="margin-top:10px;">
+                            <div class="progress-track">
+                                <div class="progress-bar-fill" style="width: 85%;"></div>
+                            </div>
+                            <p class="progress-caption">₱29,500 more to Platinum</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB 2: IMPACT -->
+            <div id="impact" class="dashboard-grid-v2 tab-content" style="display: none;">
+                
+                <!-- Left: Sponsored Scholar -->
+                <div class="card-v2">
+                    <div class="card-header-v2">Sponsored Scholar</div>
+                    
+                    <div class="scholar-profile">
+                        <img src="scholar.png" class="scholar-pic">
+                        <div class="scholar-text">
+                            <h2>Lira Dumagat</h2>
+                            <p>Grade 7 • Sitio Target</p>
+                        </div>
+                    </div>
+
+                    <div class="expense-list">
+                        <div class="expense-item">
+                            <span>Monthly Allowance</span>
+                            <strong>₱3,500</strong>
+                        </div>
+                        <div class="expense-item">
+                            <span>School Supplies</span>
+                            <strong>₱3,000</strong>
+                        </div>
+                        <div class="expense-item">
+                            <span>Food Allowance</span>
+                            <strong>₱6,000</strong>
+                        </div>
+                        <div class="expense-item">
+                            <span>Other Expenses</span>
+                            <strong>₱5,000</strong>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" style="margin-top: 20px; width: 100%;">Send Lira a Message</button>
+                </div>
+
+                <!-- Right: Stats Column -->
+                <div class="right-col-stack">
+                    <!-- Scholarships Funded -->
+                    <div class="card-v2">
+                        <div class="card-header-v2">Scholarships Funded</div>
+                        <div class="big-rank-number" style="color: #1B4332;">1</div>
+                        <hr class="card-divider">
+                        <p class="rank-sub">You are fully sponsoring 1 scholar.</p>
+                    </div>
+
+                    <!-- Education Support -->
+                    <div class="card-v2">
+                        <div class="card-header-v2">
+                            <i class="fas fa-book-open"></i> Academic Progress
+                        </div>
+                        
+                        <div class="progress-info">
+                            <span style="font-size: 1.2rem; font-weight: 700; color: #FFB700; display: block; text-align: right; margin-bottom: 5px;">33%</span>
+                            <div class="progress-track">
+                                <div class="progress-bar-fill" style="width: 33%;"></div>
+                            </div>
+                            <p class="progress-caption">Progress towards next academic year.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: SETTINGS (Placeholder) -->
+             <div id="settings" class="dashboard-grid-v2 tab-content" style="display: none;">
+                <div class="card-v2" style="grid-column: span 2;">
+                    <div class="card-header-v2">Account Settings</div>
+                    <form>
+                        <div class="clean-form-group">
+                            <label>Display Name</label>
+                            <input type="text" class="clean-input" value="Nadine Lustre" style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; width: 100%;">
+                        </div>
+                        <div class="clean-form-group" style="margin-top: 15px;">
+                            <label>Email Address</label>
+                            <input type="email" class="clean-input" value="nadine@gmail.com" style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; width: 100%;">
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 20px;">Save Changes</button>
+                    </form>
+                </div>
+             </div>
+
+        </div>
+    </section>
+
+        <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo" style="color:white;">EduTribes</h4>
+                    <p>Empowering Tarlac's Indigenous Youth through education and hope.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Tarlac City, Philippines</li>
+                        <li>edutribes.ph@gmail.com</li>
+                        <li>+63 912 345 6789</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduTribes Foundation. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tab Logic & Logout Script -->
+    <script>
+        // 1. Tab Switching Logic
+        function openTab(tabName) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove active class from all buttons
+            var tabs = document.getElementsByClassName("pill-tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            // Show target content
+            document.getElementById(tabName).style.display = "grid";
+            // Add active class to clicked button
+            event.currentTarget.classList.add("active");
+        }
+
+        // 2. Logout Logic
+        function logoutUser() {
+            // Confirm logout
+            if(confirm("Are you sure you want to log out?")) {
+                // Redirect to Login Page
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
