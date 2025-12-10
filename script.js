@@ -311,3 +311,4 @@ function updateAuthLink() {
 
 // Call the new function on page load
 document.addEventListener('DOMContentLoaded', updateAuthLink);
+
